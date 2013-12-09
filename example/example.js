@@ -1,5 +1,5 @@
 var amqp = require('amqp').createConnection('amqp://localhost');
-var retry = require('amqp-retry')(amqp);
+var retry = require('amqp-retry');
 
 amqp.once('ready', function() {
   amqp.queue('test', function(q) {
