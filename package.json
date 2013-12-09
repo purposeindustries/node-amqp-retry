@@ -11,7 +11,8 @@
     "url": "git@github.com:madbence/node-amqp-retry.git"
   },
   "keywords": [
-    "amqp", "rabbitmq"
+    "amqp",
+    "rabbitmq"
   ],
   "author": "Bence Dányi <madbence@gmail.com>",
   "license": "MIT",
@@ -20,5 +21,8 @@
   },
   "dependencies": {
     "amqp-schedule": "0.0.2"
+  },
+  "devDependencies": {
+    "amqp": "~0.1.8"
   }
 }
