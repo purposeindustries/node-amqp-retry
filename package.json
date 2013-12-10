@@ -1,6 +1,6 @@
 {
   "name": "amqp-retry",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Requeue messages with exponential delay",
   "main": "index.js",
   "scripts": {
@@ -8,19 +8,29 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:madbence/node-amqp-retry.git"
+    "url": "git@github.com:purposeindustries/node-amqp-retry.git"
   },
   "keywords": [
     "amqp",
     "rabbitmq"
   ],
-  "author": "Bence Dányi <madbence@gmail.com>",
+  "author": "Purpose Industries <dev@purposeindustries.co>",
   "license": "MIT",
+  "contributors": [
+    {
+      "name": "Bence Dány",
+      "email": "bd@purposeindustries.co"
+    },
+    {
+      "name": "Róbert Oroszi",
+      "email": "ro@purposeindustries.co"
+    }
+  ],
   "bugs": {
-    "url": "https://github.com/madbence/node-amqp-retry/issues"
+    "url": "https://github.com/purposeindustries/node-amqp-retry/issues"
   },
   "dependencies": {
-    "amqp-schedule": "0.0.2"
+    "amqp-schedule": "~0.0.2"
   },
   "devDependencies": {
     "amqp": "~0.1.8"
