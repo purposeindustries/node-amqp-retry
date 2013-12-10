@@ -1,7 +1,7 @@
 {
   "name": "amqp-retry",
-  "version": "0.0.2",
-  "description": "Resend messages on fail",
+  "version": "0.0.3",
+  "description": "Requeue messages with exponential delay",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

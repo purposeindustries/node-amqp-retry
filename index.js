@@ -16,17 +16,3 @@ module.exports = function wrapper(maxTry, initialWait, cb) {
     } catch(e) { console.error(e); }
   };
 };
-
-var c = require('amqp').createConnection('amqp://localhost');
-c.once('ready', function() {
-  c.queue('test', function(q) {
-    q.subscribe(module.exports(5, 500, function(err, message, header, deliveryInfo, job) {
-      if(err) {
-        return console.log(err);
-      }
-      console.log(message);
-      job.retry();
-    }));
-    c.publish('test', {foo:'bar'}, { contentType: 'application/json' });
-  });
-});
