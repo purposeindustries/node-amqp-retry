@@ -1,6 +1,6 @@
 {
   "name": "amqp-retry",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Requeue messages with exponential delay",
   "main": "index.js",
   "scripts": {
