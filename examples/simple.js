@@ -1,9 +1,10 @@
 var amqp = require('amqp').createConnection('amqp://localhost');
-var retry = require('amqp-retry');
+var retry = require('../index');
+//var retry = require('amqp-retry');
 
 amqp.once('ready', function() {
   amqp.queue('test', function(q) {
-    q.subscribe(retry(5, 500, function(err, message, headers, deliveryInfo, job) {
+    q.subscribe(retry(500, 5, function(err, message, headers, deliveryInfo, job) {
       if(err) {
         return console.log('Error: ', err);
       }
