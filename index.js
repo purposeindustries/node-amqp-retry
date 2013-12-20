@@ -13,10 +13,12 @@ module.exports = function wrapper(initialWait, maxTry, cb) {
       if(header.retries >= tries) {
         return cb(new Error('Message processing failed ' + maxTry + ' times'), message, header, deliveryInfo, job);
       }
-      require('amqp-schedule')(job.queue.connection)(deliveryInfo.exchange, deliveryInfo.routingKey, message, delay, {
-        contentType: deliveryInfo.contentType,
-        headers: header
-      });
+      var messageOptions = Object.keys(deliveryInfo).reduce(function(obj, key) {
+        obj[key] = deliveryInfo[key];
+        return obj;
+      }, {});
+      messageOptions.headers = header;
+      require('amqp-schedule')(job.queue.connection)(deliveryInfo.exchange, deliveryInfo.routingKey, message, delay, messageOptions);
     };
     try {
       cb(null, message, header, deliveryInfo, job);
